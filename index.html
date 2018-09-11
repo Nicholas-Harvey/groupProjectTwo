@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <style>
+        .checked { color: orange; }
+    div#addDiv {border: 1px solid black; }
+    textarea { width: 95%; }
+</style>
+</head>
+
+<body>
+    <div id="addOrReport">
+        <button type="button" id="addButton">ADD</button>
+        <button type="button" id="reportButton">REPORT</button>
+    </div>
+
+    <p id="demo"></p>
+
+    <div id="addDiv">
+        <!-- Your initial rating -->
+        <h2>Star Rating</h2>
+        <span id="star1" class="fa fa-star"></span>
+        <span id="star2" class="fa fa-star"></span>
+        <span id="star3" class="fa fa-star"></span>
+        <span id="star4" class="fa fa-star"></span>
+        <span id="star5" class="fa fa-star"></span>
+        <br>
+        Location of Bathroom (floor, nearby landmarks):
+        <br>
+        <textarea id="locationInput"></textarea>
+        <br>
+        <div id="timeDiv">
+            Hours open: <input type="text" id="hours1" class="hoursInput"> to <input type="text" id="hours2" class="hoursInput">
+            24 Hours: <input type="checkbox" id="twentyFourHours">
+        </div>
+        <div id="submitOrCancelDiv">
+            <button type="button" id="submitButton">SUBMIT</button>
+            <button type="button" id="cancelButton">CANCEL</button>
+        </div>
+    </div>
+
+    <script src="javascript/logic.js"></script>
+
+</body>
+
+</html>
