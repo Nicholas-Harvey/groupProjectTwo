@@ -1,155 +1,75 @@
-// Function that will check off star icons
-
-$("div#addDiv").hide();
-
-$("div#addDiv span.fa-star").on("click", starCheckUpdate);
-
-function starCheckUpdate() {
-    $("div#addDiv span.fa-star").removeClass("checked");
-    var checkedStar = $(this).attr("id").charAt(4);
-    for (let i = 0; i < checkedStar; i++) {
-        $("div#addDiv span:eq(" + i + ")").addClass("checked");
-    }
-    console.log($("div#addDiv span.checked").length);
-};
-
-// Click "add", run add function
-
-$("button#addButton").on("click", function () {
-    beginAddFunction();
-});
-
-function beginAddFunction() {
-    $("div#addOrReport").hide();
-    $("div#addDiv").show();
-};
-
-function showPosition(position) {
-    console.log("showPosition called");
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    if (submitPressed === true) {
-        console.log("submitPressed: " + submitPressed);
-        var rating = $("div#addDiv span.checked").length;
-        createBathroomObject(lat, long, rating);
-    } else if (findBathroomPressed === true) {
-        findClosestBathroom(lat, long, bathroomArray);
-    }
-};
-
-function getLocation() {
-    console.log("getLocation called");
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-};
-
-$("div#submitOrCancelDiv button").on("click", function () {
-    $("button#addButton").show();
-    $("div#addDiv").hide();
-});
-
-var submitPressed = false;
-var findBathroomPressed = false;
-
-$("div#submitOrCancelDiv button#submitButton").on("click", function() {
-    console.log("Submit button was clicked.");
-    submitPressed = true;
-    findBathroomPressed = false;
-    getLocation();
-});
-
-$("div#findBathroomDiv button#findBathroomButton").on("click", function() {
-    console.log("Find Bathroom button was clicked");
-    submitPressed = false;
-    findBathroomPressed = true;
-    getLocation();
-})
-
-function createBathroomObject(theLatitude, theLongitude, theRating) {
-    console.log("createBathroomWasCalled");
-    var newBathroom = {};
-    newBathroom.latitude = theLatitude.toFixed(5);
-    newBathroom.longitude = theLongitude.toFixed(5);
-    newBathroom.currentRating = theRating;
-    console.log(newBathroom);
-};
-
-$("input#twentyFourHours").on("click", disableHoursInputCheck);
-
-function disableHoursInputCheck() {
-    console.log("input checked");
-    if ($("input#twentyFourHours").is(":checked") === true) {
-        $("input.hoursInput").val("");
-        $("input.hoursInput").prop("disabled", true);
-    } else if ($("input#twentyFourHours").is(":checked") === false) {
-        $("input.hoursInput").prop("disabled", false);
-    }
-};
-
 var bathroomArray = [
 {
     gender: "Female",
     latitude: 39.68065,
     longitude: -104.96492,
     location: "First Floor",
-    rating: 5 
+    rating: 5,
+    letter: "a"
 },
 {
     gender: "Male",
     latitude: 39.68065,
     longitude: -104.96492,
     location: "First Floor",
-    rating: 5 
+    rating: 5,
+    letter: "b"
 },
 {
     gender: "Unisex",
     latitude: 39.68065,
     longitude: -104.96492,
     location: "First Floor",
-    rating: 5 
+    rating: 5,
+    letter: "c"
 },
 {
     gender: "Unisex",
     latitude: 39.68042,
     longitude: -104.96478,
     location: "Second Floor",
-    rating: 5 
+    rating: 5,
+    letter: "d"
 },
 {
     gender: "Male",
     latitude: 39.68046,
     longitude: -104.96464,
     location: "Second Floor",
-    rating: 5 
+    rating: 5,
+    letter: "e"
 },
 {
     gender: "Female",
     latitude: 39.68046,
     longitude: -104.96464,
     location: "Second Floor",
-    rating: 5 
+    rating: 5,
+    letter: "f"
 },
 {
     gender: "Unisex",
     latitude: 39.68069,
     longitude: -104.96497,
     location: "Third Floor",
-    rating: 5 
+    rating: 5,
+    letter: "g"
 },
 {
     gender: "Male",
     latitude: 39.68705,
     longitude: -104.96489,
     location: "Third Floor",
-    rating: 5 
+    rating: 5,
+    letter: "h"
 },
 {
     gender: "Female",
     latitude: 39.68705,
     longitude: -104.96489,
     location: "Third Floor",
-    rating: 5 
+    rating: 5,
+    letter: "i" 
 }
 ];
 
@@ -170,11 +90,11 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
         console.log("sum of lat and long: " + sumOfLatitudeAndLongitude);
         // Use Pythagorean Theorem to find distance between two coordinates
         var distanceToBathroom = Math.sqrt(sumOfLatitudeAndLongitude);
-
-        console.log("distance to bathroom: " + distanceToBathroom);
-        arrayOfDistancesToBathrooms.push(distanceToBathroom);
+        var distanceToBathroomToFixed5 = distanceToBathroom.toFixed(5);
+        console.log("distance to bathroom: " + distanceToBathroomToFixed5);
+        arrayOfDistancesToBathrooms.push(distanceToBathroomToFixed5);
         console.log("array of distances to bathrooms: " + arrayOfDistancesToBathrooms);
-        arrayOfDistancesToBathroomsSorted.push(distanceToBathroom);
+        arrayOfDistancesToBathroomsSorted.push(distanceToBathroomToFixed5);
         console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted);
     }
     arrayOfDistancesToBathroomsSorted.sort(function(a, b){return a - b});
@@ -189,3 +109,5 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
 var testLatitude = 39.75118;
 
 var testLongitude = -105.00315;
+
+findClosestBathroom(testLatitude, testLongitude, bathroomArray);
