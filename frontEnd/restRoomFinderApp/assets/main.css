@@ -1,5 +1,5 @@
 body{
-    /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+    background-image: url("https://thumbs.dreamstime.com/b/paper-map-background-illustration-city-roads-houses-river-68654834.jpg");
     background-color: #224289;
     color: white;
 }
@@ -11,6 +11,8 @@ body{
     border-width: 3px;
     border-bottom-color: black;
     border-radius: 5%;
+    opacity: .9;
+    /* filter: alpha(opacity=90); */
 }
 
 .display-4,
@@ -31,10 +33,11 @@ body{
     border-color: black;
     background-color: grey;
     color: yellow;
-    width: 800px;
-    height: 600px;
+    width: 600px;
+    height: 300px;
+    opacity: 1;
     /* margin: 5%; */
-    /* left: 15%; */
+    margin-left: 8%;
     /* position: relative; */
 }
 
@@ -42,6 +45,7 @@ body{
     color: black;
     background-color: yellow;
     margin: 5%;
+    opacity: 1;
 }
 
 #buttonDiv {
@@ -111,10 +115,6 @@ body{
 
 .col-form-labelB {
 margin-left: 1%;
-}
-
-.modal-footerADD {
-    background-color: white;
 }
 
 @media screen and (max-width: 980px) {
