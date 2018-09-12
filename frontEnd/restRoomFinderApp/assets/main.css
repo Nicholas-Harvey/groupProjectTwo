@@ -1,0 +1,588 @@
+body{
+    /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+    background-color: #224289;
+    color: white;
+}
+
+.jumbotron {
+    margin: 5%;
+    color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-bottom-color: black;
+    border-radius: 5%;
+}
+
+.display-4,
+.lead {
+    text-align: center;
+}
+
+.navbar {
+    border-bottom-style: solid;
+    border-bottom-width: 6px;
+    border-bottom-color: black;
+}
+
+.mapContainer {
+    text-align: center;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    background-color: grey;
+    color: yellow;
+    width: 800px;
+    height: 600px;
+    /* margin: 5%; */
+    /* left: 15%; */
+    /* position: relative; */
+}
+
+#findBathroom {
+    color: black;
+    background-color: yellow;
+    margin: 5%;
+}
+
+#buttonDiv {
+    margin-top: 0%;
+
+}
+
+#addButton {
+    color: white;
+    margin-left: 45%;
+}
+
+#reportButton {
+    color: white;
+}
+
+.card {
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 5%;
+    width: 55%; 
+    margin: 3%;
+    left: 20%;   
+}
+
+.card-header{
+    background-color: #797676;
+    border-radius: 5%;
+    
+}
+
+#homeButton {
+    margin: 35px;
+    left: 50%;
+} 
+
+.modal-body {
+    color: black;
+}
+
+.modal-title {
+    color: black;
+}
+
+.col-form-label{
+    color: black;
+    text-indent: 3%;
+}
+
+.modal-content{
+    color: black;
+    background-color: white;
+}
+
+.reportList {
+    /* text-indent: 2%; */
+    margin-left: 3%;
+}
+
+#reportForm {
+    width: 90%;
+    margin: 1%;
+    left: 15%;
+}
+
+.col-form-labelB {
+margin-left: 1%;
+}
+
+.modal-footerADD {
+    background-color: white;
+}
+
+@media screen and (max-width: 980px) {
+    body{
+        /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+        background-color: #224289;
+        color: white;
+    }
+    
+    .jumbotron {
+        margin: 5%;
+        color: black;
+        border-style: solid;
+        border-width: 3px;
+        border-bottom-color: black;
+        border-radius: 5%;
+    }
+    
+    .display-4,
+    .lead {
+        text-align: center;
+    }
+    
+    .navbar {
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+        border-bottom-color: black;
+    }
+    
+    .mapContainer {
+        text-align: center;
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+        background-color: grey;
+        color: yellow;
+        width: 800px;
+        height: 600px;
+        /* margin: 5%; */
+        /* left: 15%; */
+        /* position: relative; */
+    }
+    
+    #findBathroom {
+        color: black;
+        background-color: yellow;
+        margin: 5%;
+    }
+    
+    #buttonDiv {
+        margin-top: 0%;
+    
+    }
+    
+    #addButton {
+        color: white;
+        margin-left: 45%;
+    }
+    
+    #reportButton {
+        color: white;
+    }
+    
+    .card {
+        color: black;
+        border-style: solid;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 5%;
+        width: 55%; 
+        margin: 3%;
+        left: 20%;   
+    }
+    
+    .card-header{
+        background-color: #797676;
+        border-radius: 5%;
+        
+    }
+    
+    #homeButton {
+        margin: 35px;
+        left: 50%;
+    } 
+    
+    .modal-body {
+        color: black;
+    }
+    
+    .modal-title {
+        color: black;
+    }
+    
+    .col-form-label{
+        color: black;
+        text-indent: 3%;
+    }
+    
+    .modal-content{
+        color: black;
+        background-color: white;
+    }
+    
+    .reportList {
+        /* text-indent: 2%; */
+        margin-left: 3%;
+    }
+    
+    #reportForm {
+        width: 90%;
+        margin: 1%;
+        left: 15%;
+    }
+    
+    .col-form-labelB {
+    margin-left: 1%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    body{
+        /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+        background-color: #224289;
+        color: white;
+    }
+    
+    .jumbotron {
+        margin: 5%;
+        color: black;
+        border-style: solid;
+        border-width: 3px;
+        border-bottom-color: black;
+        border-radius: 5%;
+    }
+    
+    .display-4,
+    .lead {
+        text-align: center;
+    }
+    
+    .navbar {
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+        border-bottom-color: black;
+    }
+    
+    .mapContainer {
+        text-align: center;
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+        background-color: grey;
+        color: yellow;
+        width: 800px;
+        height: 600px;
+        /* margin: 5%; */
+        /* left: 15%; */
+        /* position: relative; */
+    }
+    
+    #findBathroom {
+        color: black;
+        background-color: yellow;
+        margin: 5%;
+    }
+    
+    #buttonDiv {
+        margin-top: 0%;
+    
+    }
+    
+    #addButton {
+        color: white;
+        margin-left: 45%;
+    }
+    
+    #reportButton {
+        color: white;
+    }
+    
+    .card {
+        color: black;
+        border-style: solid;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 5%;
+        width: 55%; 
+        margin: 3%;
+        left: 20%;   
+    }
+    
+    .card-header{
+        background-color: #797676;
+        border-radius: 5%;
+        
+    }
+    
+    #homeButton {
+        margin: 35px;
+        left: 50%;
+    } 
+    
+    .modal-body {
+        color: black;
+    }
+    
+    .modal-title {
+        color: black;
+    }
+    
+    .col-form-label{
+        color: black;
+        text-indent: 3%;
+    }
+    
+    .modal-content{
+        color: black;
+        background-color: white;
+    }
+    
+    .reportList {
+        /* text-indent: 2%; */
+        margin-left: 3%;
+    }
+    
+    #reportForm {
+        width: 90%;
+        margin: 1%;
+        left: 15%;
+    }
+    
+    .col-form-labelB {
+    margin-left: 1%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body{
+        /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+        background-color: #224289;
+        color: white;
+    }
+    
+    .jumbotron {
+        margin: 5%;
+        color: black;
+        border-style: solid;
+        border-width: 3px;
+        border-bottom-color: black;
+        border-radius: 5%;
+    }
+    
+    .display-4,
+    .lead {
+        text-align: center;
+    }
+    
+    .navbar {
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+        border-bottom-color: black;
+    }
+    
+    .mapContainer {
+        text-align: center;
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+        background-color: grey;
+        color: yellow;
+        width: 800px;
+        height: 600px;
+        /* margin: 5%; */
+        /* left: 15%; */
+        /* position: relative; */
+    }
+    
+    #findBathroom {
+        color: black;
+        background-color: yellow;
+        margin: 5%;
+    }
+    
+    #buttonDiv {
+        margin-top: 0%;
+    
+    }
+    
+    #addButton {
+        color: white;
+        margin-left: 45%;
+    }
+    
+    #reportButton {
+        color: white;
+    }
+    
+    .card {
+        color: black;
+        border-style: solid;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 5%;
+        width: 55%; 
+        margin: 3%;
+        left: 20%;   
+    }
+    
+    .card-header{
+        background-color: #797676;
+        border-radius: 5%;
+        
+    }
+    
+    #homeButton {
+        margin: 35px;
+        left: 50%;
+    } 
+    
+    .modal-body {
+        color: black;
+    }
+    
+    .modal-title {
+        color: black;
+    }
+    
+    .col-form-label{
+        color: black;
+        text-indent: 3%;
+    }
+    
+    .modal-content{
+        color: black;
+        background-color: white;
+    }
+    
+    .reportList {
+        /* text-indent: 2%; */
+        margin-left: 3%;
+    }
+    
+    #reportForm {
+        width: 90%;
+        margin: 1%;
+        left: 15%;
+    }
+    
+    .col-form-labelB {
+    margin-left: 1%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    body{
+        /* background-image: url("https://i.ytimg.com/vi/3mC0ryBkYTw/maxresdefault.jpg"); */
+        background-color: #224289;
+        color: white;
+    }
+    
+    .jumbotron {
+        margin: 5%;
+        color: black;
+        border-style: solid;
+        border-width: 3px;
+        border-bottom-color: black;
+        border-radius: 5%;
+    }
+    
+    .display-4,
+    .lead {
+        text-align: center;
+    }
+    
+    .navbar {
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+        border-bottom-color: black;
+    }
+    
+    .mapContainer {
+        text-align: center;
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+        background-color: grey;
+        color: yellow;
+        width: 800px;
+        height: 600px;
+        /* margin: 5%; */
+        /* left: 15%; */
+        /* position: relative; */
+    }
+    
+    #findBathroom {
+        color: black;
+        background-color: yellow;
+        margin: 5%;
+    }
+    
+    #buttonDiv {
+        margin-top: 0%;
+    
+    }
+    
+    #addButton {
+        color: white;
+        margin-left: 45%;
+    }
+    
+    #reportButton {
+        color: white;
+    }
+    
+    .card {
+        color: black;
+        border-style: solid;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 5%;
+        width: 55%; 
+        margin: 3%;
+        left: 20%;   
+    }
+    
+    .card-header{
+        background-color: #797676;
+        border-radius: 5%;
+        
+    }
+    
+    #homeButton {
+        margin: 35px;
+        left: 50%;
+    } 
+    
+    .modal-body {
+        color: black;
+    }
+    
+    .modal-title {
+        color: black;
+    }
+    
+    .col-form-label{
+        color: black;
+        text-indent: 3%;
+    }
+    
+    .modal-content{
+        color: black;
+        background-color: white;
+    }
+    
+    .reportList {
+        /* text-indent: 2%; */
+        margin-left: 3%;
+    }
+    
+    #reportForm {
+        width: 90%;
+        margin: 1%;
+        left: 15%;
+    }
+    
+    .col-form-labelB {
+    margin-left: 1%;
+    }
+}
