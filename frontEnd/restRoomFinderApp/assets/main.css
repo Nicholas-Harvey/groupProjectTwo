@@ -11,8 +11,12 @@ body{
     border-width: 3px;
     border-bottom-color: black;
     border-radius: 5%;
-    opacity: .9;
+    /* opacity: .9; */
     /* filter: alpha(opacity=90); */
+}
+
+#jumbotronContainer {
+    opacity: .9;
 }
 
 .display-4,
@@ -56,10 +60,12 @@ body{
 #addButton {
     color: white;
     margin-left: 45%;
+    opacity: 1;
 }
 
 #reportButton {
     color: white;
+    opacity: 1;
 }
 
 .card {
