@@ -57,7 +57,7 @@ var bathroomArray = [
 },
 {
     gender: "Male",
-    latitude: 39.68705,
+    latitude: 39.68706,
     longitude: -104.96489,
     location: "Third Floor",
     rating: 5,
@@ -90,11 +90,11 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
         console.log("sum of lat and long: " + sumOfLatitudeAndLongitude);
         // Use Pythagorean Theorem to find distance between two coordinates
         var distanceToBathroom = Math.sqrt(sumOfLatitudeAndLongitude);
-        var distanceToBathroomToFixed5 = distanceToBathroom.toFixed(5);
-        console.log("distance to bathroom: " + distanceToBathroomToFixed5);
-        arrayOfDistancesToBathrooms.push(distanceToBathroomToFixed5);
+
+        console.log("distance to bathroom: " + distanceToBathroom);
+        arrayOfDistancesToBathrooms.push(distanceToBathroom);
         console.log("array of distances to bathrooms: " + arrayOfDistancesToBathrooms);
-        arrayOfDistancesToBathroomsSorted.push(distanceToBathroomToFixed5);
+        arrayOfDistancesToBathroomsSorted.push(distanceToBathroom);
         console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted);
     }
     arrayOfDistancesToBathroomsSorted.sort(function(a, b){return a - b});

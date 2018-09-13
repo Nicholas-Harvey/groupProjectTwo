@@ -19,10 +19,26 @@
 </head>
 
 <body>
+    <div id="setGenderDiv">
+    <p>Set your gender:</p>
+    <select id="setGenderSelect">
+        <option id="male" value="m">M</option>
+        <option id="female" value="f">F</option>
+        <option id="other" value="o">Other</option>
+    </select>
+    <button type="button" id="setGenderButton">SET</button>
+    </div>
+    
+    <br>
+    <br>
+
     <div id="addOrReport">
         <button type="button" id="addButton">ADD</button>
         <button type="button" id="reportButton">REPORT</button>
     </div>
+
+    <br>
+    <br>
 
     <div id ="findBathroomDiv">
         <button type="button" id="findBathroomButton">FIND A BATHROOM</button>
@@ -31,6 +47,14 @@
     <p id="demo"></p>
 
     <div id="addDiv">
+            <div id="setGenderDivAdd">
+                    <p>Male/Female/Other:</p>
+                    <select id="setGenderAddSelect">
+                        <option value="m">M</option>
+                        <option value="f">F</option>
+                        <option value="o">Other</option>
+                    </select>
+                    </div>
         <!-- Your initial rating -->
         <h2>Star Rating</h2>
         <span id="star1" class="fa fa-star"></span>
