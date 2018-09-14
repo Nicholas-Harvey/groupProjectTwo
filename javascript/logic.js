@@ -33,6 +33,35 @@ $("div#setGenderDiv button#setGenderButton").on("click", function() {
 // Click "add", run add function
 
 $("button#addButton").on("click", function () {
+
+    // if (window.isSecureContext) {
+    //     if (navigator.geolocation) {
+    //     var location_timeout = setTimeout("geolocFail()", 10000);
+    
+    //     navigator.geolocation.getCurrentPosition(function(position) {
+    //         clearTimeout(location_timeout);
+    
+    //         var obj={
+    //             lat: position.coords.latitude,
+    //             lng: position.coords.longitude}
+    //             $.post("/api/bathroom", obj)
+
+    
+    //             .then(function(data){});
+    
+    //     }, function(error) {
+    //         clearTimeout(location_timeout);
+    //         geolocFail();
+            
+    //     });
+    // } else {
+    //     // Fallback for no geolocation
+    //     alert("Geolocation is not supported by either javascript or this browser.");
+    //     geolocFail()}
+    // } else {  alert("Not Secure!");}
+
+
+
     beginAddFunction();
 });
 
@@ -45,6 +74,7 @@ function showPosition(position) {
     console.log("showPosition called");
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+    
     if (submitPressed === true) {
         console.log("submitPressed: " + submitPressed);
         var rating = $("div#addDiv span.checked").length;
@@ -77,6 +107,7 @@ $("div#submitOrCancelDiv button#submitButton").on("click", function() {
 });
 
 $("div#findBathroomDiv button#findBathroomButton").on("click", function() {
+    // $.get("/api/all")
     console.log("Find Bathroom button was clicked");
     submitPressed = false;
     findBathroomPressed = true;
@@ -92,9 +123,14 @@ function createBathroomObject(theLatitude, theLongitude, theRating) {
     newBathroom.location = $("textarea#locationInput").val();
     newBathroom.currentRating = theRating;
     console.log(newBathroom);
-    bathroomArray.push(newBathroom);
+    var everything = bathroomArray.push(newBathroom);
     console.log(bathroomArray);
+    $.post("/api/bathrooms", everything)
+
+    
+    .then(function(data){});
 };
+
 
 $("input#twentyFourHours").on("click", disableHoursInputCheck);
 
@@ -113,63 +149,63 @@ var bathroomArray = [
     gender: "f",
     latitude: 39.68065,
     longitude: -104.96492,
-    location: "First Floor",
+    floor: "First Floor",
     rating: 5 
 },
 {
     gender: "f",
     latitude: 39.68065,
     longitude: -104.96492,
-    location: "First Floor",
+    floor: "First Floor",
     rating: 5 
 },
 {
     gender: "o",
     latitude: 39.68065,
     longitude: -104.96492,
-    location: "First Floor",
+    floor: "First Floor",
     rating: 5 
 },
 {
     gender: "o",
     latitude: 39.68042,
     longitude: -104.96478,
-    location: "Second Floor",
+    floor: "Second Floor",
     rating: 5 
 },
 {
     gender: "m",
     latitude: 39.68046,
     longitude: -104.96464,
-    location: "Second Floor",
+    floor: "Second Floor",
     rating: 5 
 },
 {
     gender: "f",
     latitude: 39.68046,
     longitude: -104.96464,
-    location: "Second Floor",
+    floor: "Second Floor",
     rating: 5 
 },
 {
     gender: "o",
     latitude: 39.68069,
     longitude: -104.96497,
-    location: "Third Floor",
+    floor: "Third Floor",
     rating: 5 
 },
 {
     gender: "m",
     latitude: 39.68705,
     longitude: -104.96488,
-    location: "Third Floor",
+    floor: "Third Floor",
     rating: 5 
 },
 {
     gender: "f",
     latitude: 39.68705,
     longitude: -104.96489,
-    location: "Third Floor",
+    floor: "Third Floor",
     rating: 5 
 }
 ];

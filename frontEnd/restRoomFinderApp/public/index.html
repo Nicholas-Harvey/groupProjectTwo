@@ -14,11 +14,11 @@
 </head>
 
 <body>
-<!-- This is our navbar, all this will do as of now or permanently, is reload the screen when "restRoomFinder" is clicked. -->
+	<!-- This is our navbar, all this will do as of now or permanently, is reload the screen when "restRoomFinder" is clicked. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="homePage.html">restRoomFinder</a>
-		<button class="navbar-toggler" type="button" data-toggle="clilapse" data-target="#navbarSupportedContent"
-		 aria-contrlis="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="clilapse" data-target="#navbarSupportedContent" aria-contrlis="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -68,8 +68,7 @@
 			</div>
 			<div class="col-md-4">
 				<!-- This button will show a list of bathrooms near the user. -->
-				<button type="button" class="btn btn-secondary" id="findBathroom" data-toggle="modal" data-target="#exampleModalCenter">Find
-					a Restroom Near Me</button>
+				<button type="button" class="btn btn-secondary" id="findBathroom" data-toggle="modal" data-target="#exampleModalCenter">Find a Restroom Near Me</button>
 			</div>
 			<div class="col-md-4">
 
@@ -80,7 +79,7 @@
 		<div class="row" id="buttonDiv">
 			<div class="col-md-3">
 				<!-- This button will load a form for the user to add a bathroom to. -->
-			<button type="button" class="btn btn-success" id="addButton" data-toggle="modal" data-target="#exampleModal">Add Restroom</button>
+				<button type="button" class="btn btn-success" id="addButton" data-toggle="modal" data-target="#exampleModal">Add Restroom</button>
 			</div>
 			<div class="col-md-3">
 			</div>
@@ -88,7 +87,7 @@
 			</div>
 			<div class="col-md-3">
 				<!-- This button will load a form for the user to report a restroom from. -->
-					<button type="button" class="btn btn-danger" id="reportButton" data-toggle="modal" data-target=".bd-example-modal-lg">Report Restroom</button>
+				<button type="button" class="btn btn-danger" id="reportButton" data-toggle="modal" data-target=".bd-example-modal-lg">Report Restroom</button>
 			</div>
 		</div>
 
@@ -97,8 +96,7 @@
 	<!-- This is the modal that will show the user the closest restroom to them.
 	Currently it has a table with example information that is hard coded in. This will be replaced by the mysql data.
 NOTE: This table is consistent with the  sql database, but NONE of this information is being accessed from the table, it is placeholder text-->
-	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-	 aria-hidden="true">
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -158,61 +156,60 @@ NOTE: This table is consistent with the  sql database, but NONE of this informat
 				<div class="modal-body">
 					<form>
 						<div class="form-group">
+							<label for="reportForm" class="col-form-labelB">Gender:</label>
+							<input type="text" class="form-control" id="reportForm
+							" aria-placeholder="M, F or U">
+						</div>
+						<div class="form-group">
 							<label for="reportForm
-							" class="col-form-labelB">Gender:</label>
+						" class="col-form-labelB">Floor:</label>
 							<input type="text" class="form-control" id="reportForm
-							">
+							" aria-placeholder="1, 2, 3, etc. ">
 						</div>
 						<div class="form-group">
-						<label for="reportForm
-						" class="col-form-labelB">Location:</label>
-							<input type="text" class="form-control" id="reportForm
-							">
-						</div>
-						<div class="form-group">
-								<label for="reportForm
+							<label for="reportForm
 								" class="col-form-labelB">Rating (1-5):</label>
-								<input type="text" class="form-control" id="reportForm
+							<input type="text" class="form-control" id="reportForm
 								">
-							</div>
 						</div>
-					</form>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-						<button type="button" class="btn btn-primary">Add Restroom</button>
-					</div>
+				</div>
+				</form>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary">Add Restroom</button>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<!-- This modal will be to report a bathroom. Right now I have a form in there but I feel like something differnent, more along the lines of Nick's form will be used here. -->
 
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<h5 class="reportList">Report a Restroom</h5>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h5 class="reportList">Report a Restroom</h5>
 				<form>
-						<div class="form-group">
-							<label for="reportForm" class="col-form-labelB">Gender:</label>
-							<input type="text" class="form-control" id="reportForm">
-						</div>
-						<div class="form-group">
+					<div class="form-group">
+						<label for="reportForm" class="col-form-labelB">Gender:</label>
+						<input type="text" class="form-control" id="reportForm">
+					</div>
+					<div class="form-group">
 						<label for="reportForm" class="col-form-labelB">Location:</label>
-							<input type="text" class="form-control" id="reportForm">
-						</div>
-						<div class="form-group">
-								<label for="reportForm" class="col-form-labelB">Report Rating (1-5):</label>
-								<input type="text" class="form-control" id="reportForm">
-							</div>
-							<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-									<button type="button" class="btn btn-primary">Report Restroom</button>
-								</div>
-						</div>
-					</form>
+						<input type="text" class="form-control" id="reportForm">
+					</div>
+					<div class="form-group">
+						<label for="reportForm" class="col-form-labelB">Report Rating (1-5):</label>
+						<input type="text" class="form-control" id="reportForm">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary">Report Restroom</button>
+					</div>
+			</div>
+			</form>
 		</div>
-	  </div>
+	</div>
 
 </body>
 
