@@ -15,6 +15,7 @@
         .checked { color: orange; }
     div#addDiv {border: 1px solid black; }
     textarea { width: 95%; }
+    div.resultsDiv { border: 1px solid black; }
 </style>
 </head>
 
@@ -35,6 +36,7 @@
     <div id="addOrReport">
         <button type="button" id="addButton">ADD</button>
         <button type="button" id="reportButton">REPORT</button>
+
     </div>
 
     <br>
@@ -44,10 +46,89 @@
         <button type="button" id="findBathroomButton">FIND A BATHROOM</button>
     </div>
 
+    <div id="allResultsDiv">
+        <p id="errorMessage"></p>
+        <div id="results1Div" class="resultsDiv">
+            1
+            <button type="button" class="rateButton">RATE THIS BATHROOM</button>
+            <div class="resultsRatingsDiv">
+                    <h2>Rate Bathroom 1</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+                    <button type="button" class="ratingSubmitButton">SUBMIT RATING</button>
+            </div>
+            <p class="gender"></p>
+            <p class="location"></p>
+            <div class="rating">
+                    <h2>Current Bathroom Rating:</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+            </div>
+            <p class="latitude" hidden></p>
+            <p class="longitude" hidden></p>
+        </div>
+        <div id="results2Div" class="resultsDiv">
+            2
+            <button type="button" class="rateButton">RATE THIS BATHROOM</button>
+            <div class="resultsRatingsDiv">
+                    <h2>Rate Bathroom 2</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+                    <button type="button" class="ratingSubmitButton">SUBMIT RATING</button>
+            </div>
+            <p class="gender"></p>
+            <p class="location"></p>
+            <div class="rating">
+                    <h2>Current Bathroom Rating:</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+            </div>
+            <p class="latitude" hidden></p>
+            <p class="longitude" hidden></p>
+        </div>
+        <div id="results3Div" class="resultsDiv">
+            3
+            <button type="button" class="rateButton">RATE THIS BATHROOM</button>
+            <div class="resultsRatingsDiv">
+                    <h2>Rate Bathroom 3</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+                    <button type="button" class="ratingSubmitButton">SUBMIT RATING</button>
+            </div>
+            <p class="gender"></p>
+            <p class="location"></p>
+            <div class="rating">
+                    <h2>Current Bathroom Rating:</h2>
+                    <span id="star1" class="fa fa-star"></span>
+                    <span id="star2" class="fa fa-star"></span>
+                    <span id="star3" class="fa fa-star"></span>
+                    <span id="star4" class="fa fa-star"></span>
+                    <span id="star5" class="fa fa-star"></span> 
+            </div>
+            <p class="latitude" hidden></p>
+            <p class="longitude" hidden></p>
+        </div>
+    </div>
+
     <p id="demo"></p>
 
     <div id="addDiv">
-            <div id="setGenderDivAdd">
+            <div id="setGenderDivAdd">` 
                     <p>Male/Female/Other:</p>
                     <select id="setGenderAddSelect">
                         <option value="m">M</option>
