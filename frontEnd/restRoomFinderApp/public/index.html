@@ -7,8 +7,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/main.css">
-	<script src="../script/script.js"></script>
+	<!-- <script src="../script/script.js"></script> -->
 	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="../mapLogic/reverseGeoLocation.js"></script>
+	<script async defer
+					  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3lQrQEuewccQJBERTHSvqRyUgH4Ucj9g&callback=initMap">
+					  </script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
@@ -16,7 +20,7 @@
 <body>
 <!-- This is our navbar, all this will do as of now or permanently, is reload the screen when "restRoomFinder" is clicked. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="homePage.html">restRoomFinder</a>
+		<a class="navbar-brand" href="index.html">restRoomFinder</a>
 		<button class="navbar-toggler" type="button" data-toggle="clilapse" data-target="#navbarSupportedContent"
 		 aria-contrlis="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -48,7 +52,12 @@
 			</div>
 			<div class="col-md-8">
 				<div class="mapContainer">
-					Map will go here.
+					<div id="floating-panel">
+						<input id="latlng" type="text" value="39.68042, -104.96478">
+						<input id="submit" type="button" value="Reverse Geocode">
+					  </div>
+					  <div id="map"></div>
+					  <!-- Replace the value of the key parameter with your own API key. -->
 				</div>
 			</div>
 			<div class="col-md-2">
