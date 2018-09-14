@@ -21,6 +21,7 @@ function hideOtherResults() {
 
 $("div#allResultsDiv button.rateButton").on("click", function() {
     $("div.resultsDiv:visible div.resultsRatingsDiv").show();
+    $("div.rating").hide();
 });
 
 $("div.resultsRatingsDiv span.fa-star").on("click", resultsStarCheckUpdate);
@@ -38,17 +39,10 @@ function resultsStarCheckUpdate() {
 $("button.ratingSubmitButton").on("click", submitRating);
 
 function submitRating() {
-    for (var i = 0; i < bathroomArray.length; i++) {
-        if 
-    }
-};
-
-function rateTheBathroom(theLatitude, theLongitude) {
-    if ((theLatitude !== matchingBathroomArray[0].latitude) && ((theLongitude !== matchingBathroomArray[0].longitude))) {
-        $("p#errorMessage").html("Sorry, you must be closer to this bathroom to rate it.");
-    } else if ((theLatitude === matchingBathroomArray[0].latitude) && ((theLongitude === matchingBathroomArray[0].longitude))) {
-
-    }
+    console.log("sumbitted!");
+    bathroomArray[parseInt($("div.resultsDiv:visible p.index:visible").html())].rating = $("div.resultsDiv:visible span.checked:visible").length;
+    $("div#allResultsDiv").hide();
+    console.log(bathroomArray);
 };
 
 $("div#addDiv span.fa-star").on("click", starCheckUpdate);
@@ -100,8 +94,6 @@ function showPosition(position) {
         createBathroomObject(lat, long, rating);
     } else if (findBathroomPressed === true) {
         findClosestBathroom(lat, long, bathroomArray);
-    } else if (rateBathroomPressed === true) {
-        rateTheBathroom(lat, long);
     }
 };
 
@@ -228,15 +220,14 @@ var bathroomArray = [
 }
 ];
 
-var indexOfItemsFromBathroomArray;
-
 function findClosestBathroom(theLatitude, theLongitude, array) {
+    $("span").removeClass("checked");
+    $("div.rating").hide();
     var numberOfAvailableBathrooms;
     console.log("findClosestBathroom has been called");
     var matchingBathroomArray = [];
     var arrayOfDistancesToBathrooms = [];
     var arrayOfDistancesToBathroomsSorted = [];
-    indexOfItemsFromBathroomArray = [];
     for (var i = 0; i < array.length; i++) {
         console.log("Bathroom at index " + i + " is a match? " + (localStorage.getItem("gender") === array[i].gender));
         if ((localStorage.getItem("gender") === array[i].gender) || (array[i].gender === "o")) {
@@ -255,14 +246,17 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
             console.log("distance to bathroom: " + distanceToBathroom);
             matchingBathroomArray.push(bathroomArray[i]);
             arrayOfDistancesToBathrooms.push(distanceToBathroom);
-            indexOfItemsFromBathroomArray.push(i);
             console.log("array of distances to bathrooms: " + arrayOfDistancesToBathrooms);
-            arrayOfDistancesToBathroomsSorted.push(distanceToBathroom);
-            console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted);
+            var sortedDistanceObject = {
+                distance: distanceToBathroom,
+                originalIndex: i
+            }
+            arrayOfDistancesToBathroomsSorted.push(sortedDistanceObject);
+            console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted.distance);
         }
     }
     arrayOfDistancesToBathroomsSorted.sort(function(a, b){return a - b});
-    console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted);
+    console.log("array of distances to bathrooms, sorted: " + arrayOfDistancesToBathroomsSorted.distance);
     if (arrayOfDistancesToBathrooms.length >= 3) {
         numberOfAvailableBathrooms = 3;
     } else if (arrayOfDistancesToBathrooms.length < 3) {
@@ -270,15 +264,20 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
     }
     console.log('number of available bathrooms: ' + numberOfAvailableBathrooms);
     $("div#allResultsDiv").show();
+    $("div.resultsDiv").show();
+    $("div.resultsRatingsDiv").hide();
+    // $("div.resultsRatingsDiv").show();
+    $("div.rating").show();
     console.log("number of paragraphs: " + $("p.gender").length);
     for (var i = 0; i < numberOfAvailableBathrooms; i++) {
-        console.log(matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])]);
-        console.log(matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].gender);
-        var genderAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].gender;
-        var locationAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].location;
-        var latitudeAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].latitude;
-        var longitudeAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].longitude;
-        var ratingAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i])].rating;
+        console.log(matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)]);
+        console.log(matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].gender);
+        var genderAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].gender;
+        var locationAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].location;
+        var latitudeAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].latitude;
+        var longitudeAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].longitude;
+        var ratingAtI = matchingBathroomArray[arrayOfDistancesToBathrooms.indexOf(arrayOfDistancesToBathroomsSorted[i].distance)].rating;
+        var indexAtI = arrayOfDistancesToBathroomsSorted[i].originalIndex;
         console.log(genderAtI);
         // console.log(typeof genderAtI);
         var genderLine = $("p.gender:eq(" + i + ")");
@@ -293,9 +292,11 @@ function findClosestBathroom(theLatitude, theLongitude, array) {
         var locationLine = $("p.location:eq(" + i + ")");
         var latitudeLine = $("p.latitude:eq(" + i + ")");
         var longitudeLine = $("p.longitude:eq(" + i + ")");
+        var indexLine = $("p.index:eq(" + i + ")");
         locationLine.html(locationAtI);
         latitudeLine.html(latitudeAtI);
         longitudeLine.html(longitudeAtI);
+        indexLine.html(indexAtI);
         for (var j = 0; j < ratingAtI; j++) {
             $("div.rating:eq(" + i + ") span.fa-star:eq(" + j + ")").addClass("checked");
         }
